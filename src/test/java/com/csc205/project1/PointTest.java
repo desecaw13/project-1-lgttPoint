@@ -2,13 +2,12 @@ package com.csc205.project1;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PointTest {
 
     @Test
-    void setPoint() {
+    void createPoint() {
 
         // Setup
         double expectedX = 5;
@@ -61,7 +60,7 @@ class PointTest {
         // Setup
         double expectedDistance = 5;
         Point point1 = new Point(0, 0);
-        Point point2 = new Point(3,4);
+        Point point2 = new Point(3, 4);
 
         // Exercise
 
@@ -87,5 +86,33 @@ class PointTest {
         // Assert
         assertEquals(expectedX, x);
         assertEquals(expectedY, y);
+    }
+
+    @Test
+    void TestToString() {
+        Point point = new Point(5, 5);
+        assertEquals("Point(x=5.0, y=5.0)", point.toString());
+    }
+
+    @Test
+    void setX() {
+        Point point = new Point();
+        point.setX(9);
+        assertEquals(9, point.getX());
+    }
+
+    @Test
+    void setY() {
+        Point point = new Point();
+        point.setY(9);
+        assertEquals(9, point.getY());
+    }
+
+    @Test
+    void setPoint() {
+        Point point = new Point();
+        point.setPoint(5, -5);
+        assertEquals(5, point.getX());
+        assertEquals(-5, point.getY());
     }
 }
